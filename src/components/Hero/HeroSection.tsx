@@ -51,7 +51,7 @@ export const HeroSection: React.FC = () => {
 
   return (
     <>
-      <Box
+      {/* <Box
         sx={{
           background: "transparent",
           overflow: "hidden",
@@ -66,7 +66,7 @@ export const HeroSection: React.FC = () => {
         }}
       >
         <SensorVisualization />
-      </Box>
+      </Box> */}
       <Box
         component="section"
         sx={{
@@ -76,9 +76,46 @@ export const HeroSection: React.FC = () => {
           position: "relative",
           pt: 8,
           pb: 4,
-          background: `linear-gradient(135deg, ${theme.palette.background.default} 0%, ${theme.palette.background.paper} 100%)`,
-          "&::before": {
-            content: '""',
+          overflow: "hidden",
+        }}
+      >
+        {/* Video Background */}
+        <Box
+          component="video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: 0.3,
+            zIndex: -2,
+          }}
+        >
+          <source src="/RobotDemoVideo.mp4" type="video/mp4" />
+        </Box>
+
+        {/* Background overlay */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: `linear-gradient(135deg, ${theme.palette.background.default}dd 0%, ${theme.palette.background.paper}dd 100%)`,
+            zIndex: -1,
+          }}
+        />
+
+        {/* Gradient overlays */}
+        <Box
+          sx={{
             position: "absolute",
             top: 0,
             left: 0,
@@ -90,9 +127,9 @@ export const HeroSection: React.FC = () => {
             radial-gradient(circle at 40% 40%, ${theme.palette.primary.main}11 0%, transparent 50%)
           `,
             zIndex: 0,
-          },
-        }}
-      >
+          }}
+        />
+
         <Container maxWidth="lg" sx={{ position: "relative", zIndex: 20 }}>
           <Grid
             container
@@ -120,8 +157,7 @@ export const HeroSection: React.FC = () => {
                       textAlign: "center",
                     }}
                   >
-                    Rethinking Robotics in a Resource-Constrained
-                    World
+                    FUTURE-PROOF ROBOTICS SYSTEM
                   </Typography>
                 </motion.div>
 
@@ -138,8 +174,7 @@ export const HeroSection: React.FC = () => {
                       mx: "auto",
                     }}
                   >
-                    Pioneering autonomous humanoid robots with advanced
-                    artificial intelligence
+                    Merging advanced AI with precision engineering to solve real-world challenges.
                   </Typography>
                 </motion.div> */}
 
@@ -150,14 +185,15 @@ export const HeroSection: React.FC = () => {
                       mb: 4,
                       color: theme.palette.text.secondary,
                       // fontStyle: "italic",
-                      maxWidth: "800px",
+                      maxWidth: "900px",
                       textAlign: "center",
                       mx: "auto",
                     }}
                   >
-                    Kognexus builds next-generation efficient, sustainable and
-                    affordable robotic systems that merge advanced artificial
-                    intelligence with precision electro-mechanical engineering.
+                    At Kognexus, we're reimagining robotics for a
+                    resource-constrained world. Our next-generation systems are
+                    designed to be more sustainable, reduce supply chain risks,
+                    and deliver exceptional efficiency.
                   </Typography>
                 </motion.div>
 
@@ -177,56 +213,56 @@ export const HeroSection: React.FC = () => {
                       startIcon={<PlayArrow />}
                       onClick={scrollToPilotProgram}
                       sx={{
-                        px: 4,
-                        py: 1.5,
+                      px: 4,
+                      py: 1.5,
+                      borderRadius: 2,
+                      background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+                      boxShadow: `0 8px 32px ${theme.customColors.glow}`,
+                      position: "relative",
+                      overflow: "hidden",
+                      cursor: "pointer",
+                      // Glassy effect
+                      "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        background:
+                        "linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%)",
+                        opacity: 0.7,
                         borderRadius: 2,
-                        background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-                        boxShadow: `0 8px 32px ${theme.customColors.glow}`,
-                        position: "relative",
-                        overflow: "hidden",
-                        cursor: "pointer",
-                        // Glassy effect
-                        "&::before": {
-                          content: '""',
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          width: "100%",
-                          height: "100%",
-                          background:
-                            "linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%)",
-                          opacity: 0.7,
-                          borderRadius: 2,
-                          pointerEvents: "none",
-                          zIndex: 1,
-                        },
-                        // Gloss highlight
-                        "&::after": {
-                          content: '""',
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          width: "100%",
-                          height: "45%",
-                          background:
-                            "linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%)",
-                          borderTopLeftRadius: 8,
-                          borderTopRightRadius: 8,
-                          opacity: 0.7,
-                          pointerEvents: "none",
-                          zIndex: 2,
-                        },
-                        color: "#fff",
-                        backdropFilter: "blur(2px)",
-                        WebkitBackdropFilter: "blur(2px)",
-                        transition: "transform 0.2s, box-shadow 0.2s",
-                        "&:hover": {
-                          transform: "translateY(-2px) scale(1.03)",
-                          boxShadow: `0 12px 40px ${theme.customColors.glow}`,
-                        },
+                        pointerEvents: "none",
+                        zIndex: 1,
+                      },
+                      // Gloss highlight
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "45%",
+                        background:
+                        "linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%)",
+                        borderTopLeftRadius: 8,
+                        borderTopRightRadius: 8,
+                        opacity: 0.7,
+                        pointerEvents: "none",
+                        zIndex: 2,
+                      },
+                      color: "#fff",
+                      backdropFilter: "blur(2px)",
+                      WebkitBackdropFilter: "blur(2px)",
+                      transition: "transform 0.2s, box-shadow 0.2s",
+                      "&:hover": {
+                        transform: "translateY(-2px) scale(1.03)",
+                        boxShadow: `0 12px 40px ${theme.customColors.glow}`,
+                      },
                       }}
                     >
-                      Join the Pilot Program
+                      Learn More
                     </Button>
                   </Box>
                 </motion.div>

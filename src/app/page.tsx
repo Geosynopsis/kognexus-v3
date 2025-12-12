@@ -13,7 +13,7 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       {/* <CapabilitiesSection /> */}
-      <FeaturesSection />
+      {/* <FeaturesSection /> */}
       <PilotProgramSection />
       <Footer />
     </Box>

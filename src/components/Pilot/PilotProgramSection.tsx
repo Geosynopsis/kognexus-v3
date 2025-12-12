@@ -268,7 +268,7 @@ export const PilotProgramSection: React.FC = () => {
           color: "rgba(173, 216, 230, 0.9)",
         }}
       >
-        You have submitted a request the Pilot Program!
+        Thank you for the submission. We'll be in touch soon!
       </Typography>
       
       <Typography
@@ -289,9 +289,9 @@ export const PilotProgramSection: React.FC = () => {
           lineHeight: 1.6,
         }}
       >
-        Thank you for joining our exclusive pilot program. Our team will reach out to you at{" "}
+        Thank you for your interest to learn more about our robotics system. Our team will reach out to you at{" "}
         <strong style={{ color: "rgba(173, 216, 230, 0.9)" }}>{submittedData?.email}</strong>{" "}
-        within the next few business days to discuss the next steps.
+        within the next few business days.
       </Typography>
       
       <Typography
@@ -304,7 +304,7 @@ export const PilotProgramSection: React.FC = () => {
         Submitted on {submittedData?.submissionDate ? new Date(submittedData.submissionDate).toLocaleDateString() : 'recently'}
       </Typography>
       
-      <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
+      {/* <Box sx={{ display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
         <Button
           variant="outlined"
           onClick={handleShowFormAgain}
@@ -319,7 +319,7 @@ export const PilotProgramSection: React.FC = () => {
         >
           Submit Another Application
         </Button>
-      </Box>
+      </Box> */}
     </Box>
   );
 
@@ -360,7 +360,7 @@ export const PilotProgramSection: React.FC = () => {
                   fontWeight: 700,
                 }}
               >
-                {isSubmitted ? "Pilot Program Status" : "Join the Pilot Program"}
+                {isSubmitted ? "Thank You" : "Curious? Get in Touch!"}
               </Typography>
               <Typography
                 variant="h6"
@@ -373,8 +373,8 @@ export const PilotProgramSection: React.FC = () => {
                 }}
               >
                 {isSubmitted 
-                  ? "You've successfully joined our exclusive pilot program. We're excited to have you on board!"
-                  : "Be among the first to experience our revolutionary robotics platform. Join our exclusive pilot program and help shape the future of industrial automation."
+                  ? ""
+                  : "Interested in learning more about our robotics system? Fill out the form below."
                 }
               </Typography>
             </Box>
@@ -525,7 +525,7 @@ export const PilotProgramSection: React.FC = () => {
                   }
                   label={
                     <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                      I agree to be contacted by the Kognexus team regarding the pilot program
+                      I agree to be contacted by the Kognexus team regarding my inquiry.
                     </Typography>
                   }
                 />
@@ -557,7 +557,7 @@ export const PilotProgramSection: React.FC = () => {
                     transition: "all 0.3s ease",
                   }}
                 >
-                  {isSubmitting ? "Submitting..." : "Join Pilot Program"}
+                  {isSubmitting ? "Submitting..." : "Get in Touch"}
                 </Button>
               </Box>
             </Box>
