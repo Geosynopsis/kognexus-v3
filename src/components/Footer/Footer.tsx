@@ -44,7 +44,7 @@ const Footer = () => {
             variant="body1"
             sx={{ color: theme.palette.text.secondary }}
           >
-            © 2025 Kognexus. Shaping the future of workforce.
+            © 2025 Kognexus. Shaping the future of robotics.
           </Typography>
           <Typography
             variant="body2"
